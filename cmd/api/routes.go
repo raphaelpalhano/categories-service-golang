@@ -14,4 +14,8 @@ func CategoryRoutes(router *gin.Engine) {
 	categoryRoutes.POST("/", func(ctx *gin.Context) {
 		controllers.CreateCategory(ctx, inMemoryCategoryRepository)
 	})
+
+	categoryRoutes.GET("/", func(ctx *gin.Context) {
+		controllers.ListCategory(ctx, inMemoryCategoryRepository)
+	})
 }
